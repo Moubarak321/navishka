@@ -1,0 +1,43 @@
+export const products = [
+  {
+    id: '1',
+    name: 'Radiant Glow Serum',
+    price: 49.99,
+    image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80',
+    category: 'skincare',
+    rating: 4.5,
+    reviews: 128,
+    description: 'A lightweight serum that brightens and evens skin tone while providing deep hydration.',
+  },
+  {
+    id: '2',
+    name: 'Velvet Matte Lipstick',
+    price: 24.99,
+    image: 'https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&q=80',
+    category: 'makeup',
+    rating: 4.8,
+    reviews: 256,
+    description: 'Long-lasting, creamy matte lipstick that keeps your lips moisturized all day.',
+  },
+  {
+    id: '3',
+    name: 'Rose Garden Perfume',
+    price: 89.99,
+    image: 'https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&q=80',
+    category: 'fragrance',
+    rating: 4.7,
+    reviews: 92,
+    description: 'A romantic blend of rose, jasmine, and subtle woody notes.',
+  },
+  {
+    id: '4',
+    name: 'Jade Facial Roller',
+    price: 29.99,
+    image: 'https://images.unsplash.com/photo-1628602040838-1a8f98b31b45?auto=format&fit=crop&q=80',
+    category: 'tools',
+    rating: 4.6,
+    reviews: 164,
+    description: 'Natural jade roller that helps reduce puffiness and promote lymphatic drainage.',
+  },
+  // Add more products as needed
+];
