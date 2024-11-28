@@ -7,7 +7,7 @@ import AuthModal from './AuthModal';
 
 export default function Navbar() {
   const cartItems = useCartStore((state) => state.items);
-  const { user, signOut } = useAuthStore();
+  useAuthStore();
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const itemCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
