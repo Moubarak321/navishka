@@ -3,7 +3,7 @@ import { useAuthStore } from '../store/useAuthStore';
 import { useNavigate } from 'react-router-dom';
 import { Package, Heart, Settings, CreditCard } from 'lucide-react';
 import toast from 'react-hot-toast';
-
+ 
 function Profile() {
   const navigate = useNavigate();
   const { user, signIn, signOut, isAdmin } = useAuthStore();

@@ -10,6 +10,7 @@ import Cart from './pages/cart';
 import Checkout from './pages/checkout';
 import Profile from './pages/profile';
 import Admin from './pages/admin';
+console.log(Home, Shop, ProductDetail, Cart, Checkout, Profile, Admin);
 
 function App() {
   return (
