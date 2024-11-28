@@ -125,15 +125,14 @@ function Admin() {
 
   const handleAddProduct = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!newProduct.image) {
-      toast.error('Please provide a valid image URL');
-      return;
-    }
+    // if (!newProduct.image) {
+    //   toast.error('Please provide a valid image URL');
+    //   return;
+    // }
 
     try {
       setIsLoading(true);
       const addedProduct = await addFirebaseProduct(newProduct); // Ajout dans la base Firebase
-      console.debug("firebase call")
       if (addedProduct) {
         setProducts((prev) => [addedProduct, ...prev]);
         setIsAddModalOpen(false);
@@ -146,11 +145,10 @@ function Admin() {
         });
         toast.success('Product added successfully');
       }
-      console.debug("product added")
 
     } catch (error) {
-      console.error('Error adding product:', error);
       toast.error('Failed to add product');
+      console.error('Error adding product:', error);
     } finally {
       setIsLoading(false);
     }
