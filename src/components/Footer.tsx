@@ -10,7 +10,7 @@ function Footer() {
           <div className="space-y-4">
             <div className="flex items-center gap-2 text-xl md:text-2xl font-bold text-brand-600">
               <Leaf className="w-6 h-6 md:w-8 md:h-8" />
-              <span>NAVISKA</span>
+              <span>NAVISHKA</span>
             </div>
             <p className="text-sm md:text-base text-gray-600">
               Discover natural hair care solutions with our organic collection.

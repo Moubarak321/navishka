@@ -20,7 +20,7 @@ function Shop() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const categories = ['all', 'shampoo', 'conditioner', 'treatments', 'accessories'];
+  const categories = ['all', 'shampoing', 'savon', 'huile', 'beurre'];
 
   useEffect(() => {
     fetchProducts();

@@ -62,7 +62,7 @@ function ProductCard({ product }: ProductCardProps) {
           <span className="text-xs md:text-sm text-gray-500">({product.reviews})</span>
         </div>
         <p className="font-semibold text-brand-600 text-sm md:text-base">
-          ${product.price.toFixed(2)}
+          {product.price} fcfa
         </p>
       </div>
     </Link>

@@ -34,7 +34,7 @@ function Cart() {
             />
             <div className="flex-1">
               <h3 className="font-semibold">{item.name}</h3>
-              <p className="text-gray-600">${item.price.toFixed(2)}</p>
+              <p className="text-gray-600">{item.price} fcfa</p>
             </div>
             <div className="flex items-center gap-4">
               <select
@@ -64,7 +64,7 @@ function Cart() {
       <div className="bg-white rounded-lg shadow-sm p-6">
         <div className="flex justify-between mb-4">
           <span>Subtotal</span>
-          <span className="font-semibold">${total.toFixed(2)}</span>
+          <span className="font-semibold">{total} fcfa</span>
         </div>
         <Link to="/checkout" className="w-full btn btn-primary text-center bg-green-600 text-white">
           Proceed to Checkout

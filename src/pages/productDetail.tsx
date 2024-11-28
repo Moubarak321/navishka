@@ -97,7 +97,7 @@ function ProductDetail() {
           <div>
             <h1 className="text-2xl sm:text-3xl font-bold mb-2">{product.name}</h1>
             <p className="text-xl sm:text-2xl font-semibold text-brand-600">
-              ${product.price.toFixed(2)}
+              {product.price} fcfa
             </p>
           </div>
 

@@ -19,19 +19,19 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center gap-2 text-xl md:text-2xl font-bold text-brand-600">
               <Leaf className="w-6 h-6 md:w-8 md:h-8" />
-              <span>NAVISKA</span>
+              <span>NAVISHKA</span>
             </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <Link to="/shop" className="text-gray-700 hover:text-brand-600">
+              <Link to="/shop" className="text-gray-70000 hover:text-brand-600 font-bold">
                 Shop
               </Link>
-              
             </div>
 
+
             <div className="flex items-center space-x-4 md:space-x-6">
-               
+
               <Link to="/cart" className="text-gray-700 hover:text-brand-600 relative">
                 <ShoppingBag className="w-5 h-5" />
                 {itemCount > 0 && (
@@ -40,7 +40,7 @@ export default function Navbar() {
                   </span>
                 )}
               </Link>
-              <button 
+              <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="md:hidden text-gray-700"
               >
@@ -58,29 +58,29 @@ export default function Navbar() {
         {isMobileMenuOpen && (
           <div className="md:hidden bg-white border-t">
             <div className="container mx-auto px-4 py-4 space-y-3">
-              <Link 
-                to="/shop" 
+              <Link
+                to="/shop"
                 className="block text-gray-700 hover:text-brand-600 py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Shop
               </Link>
-              <Link 
-                to="/shop?category=shampoo" 
+              <Link
+                to="/shop?category=shampoo"
                 className="block text-gray-700 hover:text-brand-600 py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Shampoo
               </Link>
-              <Link 
-                to="/shop?category=treatments" 
+              <Link
+                to="/shop?category=treatments"
                 className="block text-gray-700 hover:text-brand-600 py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Treatments
               </Link>
-              <Link 
-                to="/shop?category=accessories" 
+              <Link
+                to="/shop?category=accessories"
                 className="block text-gray-700 hover:text-brand-600 py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >

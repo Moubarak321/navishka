@@ -40,7 +40,7 @@ function Admin() {
   const navigate = useNavigate();
   const { user, isAdmin, signOut} = useAuthStore();
   const [products, setProducts] = useState<Product[]>([]);
-  const categories = ['shampoo', 'conditioner', 'treatments', 'accessories'];
+  const categories = ['shampoing', 'savon', 'huile', 'beurre'];
 
   const [activeTab, setActiveTab] = useState('products');
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
@@ -205,7 +205,7 @@ function Admin() {
         <h1 className="text-2xl sm:text-3xl font-bold">Admin Dashboard</h1>
         <button
           onClick={() => setIsAddModalOpen(true)}
-          className="btn btn-primary flex items-center gap-2"
+          className="btn bg-green-600 text-white flex items-center gap-2"
           disabled={isLoading}
         >
           <Plus className="w-4 h-4" />
@@ -213,7 +213,7 @@ function Admin() {
         </button>
         <button
           onClick={() => signOut()}
-          className="btn btn-primary flex items-center gap-2"
+          className="btn bg-green-600 text-white flex items-center gap-2"
         >
           Sign Out
         </button>
@@ -301,7 +301,7 @@ function Admin() {
                       </td>
                       <td className="max-w-[200px] truncate">{product.name}</td>
                       <td className="capitalize hidden sm:table-cell">{product.category}</td>
-                      <td>${product.price.toFixed(2)}</td>
+                      <td>{product.price} fcfa</td>
                       <td>
                         <div className="flex gap-2">
                           <button
@@ -360,7 +360,7 @@ function Admin() {
         <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
         <div className="fixed inset-0 flex items-center justify-center p-4">
           <Dialog.Panel className="w-full max-w-md bg-white rounded-lg p-6">
-            <div className="flex justify-between items-center mb-4">
+            <div className="flex justify-between  items-center mb-4">
               <Dialog.Title className="text-xl font-semibold">
                 Add Product
               </Dialog.Title>
@@ -388,7 +388,7 @@ function Admin() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Price ($)
+                  Price (fcfa)
                 </label>
                 <input
                   type="number"
@@ -463,7 +463,7 @@ function Admin() {
                 </button>
                 <button
                   type="submit"
-                  className="btn btn-primary"
+                  className="btn bg-green-600 text-white"
                   disabled={isLoading}
                 >
                   {isLoading ? 'Processing...' : 'Add Product'}
@@ -516,7 +516,7 @@ function Admin() {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Price ($)
+                    Price (fcfa)
                   </label>
                   <input
                     type="number"
