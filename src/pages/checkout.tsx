@@ -107,7 +107,7 @@ function Checkout() {
               </div>
             </div>
 
-            <button type="submit" className="w-full btn btn-primary">
+            <button type="submit" className="w-full btn btn-primary bg-green-600 text-white">
               Place Order (${total.toFixed(2)})
             </button>
           </form>

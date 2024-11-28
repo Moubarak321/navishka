@@ -66,7 +66,7 @@ function Cart() {
           <span>Subtotal</span>
           <span className="font-semibold">${total.toFixed(2)}</span>
         </div>
-        <Link to="/checkout" className="w-full btn btn-primary text-center">
+        <Link to="/checkout" className="w-full btn btn-primary text-center bg-green-600 text-white">
           Proceed to Checkout
         </Link>
       </div>

@@ -66,7 +66,7 @@ function Profile() {
           </div>
           <button
             type="submit"
-            className="w-full btn btn-primary"
+            className="w-full btn btn-primary bg-green-600 text-white"
             disabled={isLoading}
           >
             {isLoading ? 'Signing in...' : 'Sign In'}

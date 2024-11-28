@@ -143,7 +143,7 @@ function ProductDetail() {
 
             <button
               onClick={handleAddToCart}
-              className="w-full btn btn-primary py-3"
+              className="w-full btn btn-primary py-3 bg-green-600 text-white "
             >
               Add to Cart
             </button>

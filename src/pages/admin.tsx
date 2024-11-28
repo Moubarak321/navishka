@@ -48,7 +48,7 @@ function Admin() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [imagePreview, setImagePreview] = useState<string | null>(null);
-  const [isUploading, setIsUploading] = useState(false);
+  // const [isUploading, setIsUploading] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const [newProduct, setNewProduct] = useState<Omit<Product, 'id' | 'rating' | 'reviews'>>({
@@ -88,7 +88,7 @@ function Admin() {
         </p>
         <button
           onClick={() => navigate('/profile')}
-          className="btn btn-primary mt-4"
+          className="btn btn-primary mt-4 bg-green-600 text-white"
         >
           Go to Login
         </button>
@@ -133,6 +133,7 @@ function Admin() {
     try {
       setIsLoading(true);
       const addedProduct = await addFirebaseProduct(newProduct); // Ajout dans la base Firebase
+      console.debug("firebase call")
       if (addedProduct) {
         setProducts((prev) => [addedProduct, ...prev]);
         setIsAddModalOpen(false);
@@ -145,6 +146,8 @@ function Admin() {
         });
         toast.success('Product added successfully');
       }
+      console.debug("product added")
+
     } catch (error) {
       console.error('Error adding product:', error);
       toast.error('Failed to add product');
