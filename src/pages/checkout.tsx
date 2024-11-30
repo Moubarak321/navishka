@@ -281,8 +281,8 @@ Total : ${total.toLocaleString()} Fcfa
               </div> */}
             </div>
 
-            <button type="submit" className="w-full btn btn-primary">
-              Envoyer via WhatsApp ({total.toLocaleString()} Fcfa)
+            <button type="submit" className="w-full btn  bg-green-600 text-white">
+              Valider via WhatsApp ({total.toLocaleString()} Fcfa)
             </button>
           </form>
         </div>

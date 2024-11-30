@@ -53,7 +53,6 @@ export default function Navbar() {
             </div>
           </div>
         </div>
-
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden bg-white border-t">
@@ -65,27 +64,34 @@ export default function Navbar() {
               >
                 Shop
               </Link>
-              <Link
+              {/* <Link
                 to="/shop?category=shampoo"
                 className="block text-gray-700 hover:text-brand-600 py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Shampoo
+                shampoing
               </Link>
               <Link
                 to="/shop?category=treatments"
                 className="block text-gray-700 hover:text-brand-600 py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Treatments
+                savon
               </Link>
               <Link
                 to="/shop?category=accessories"
                 className="block text-gray-700 hover:text-brand-600 py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Accessories
+                huile
               </Link>
+              <Link
+                to="/shop?category=accessories"
+                className="block text-gray-700 hover:text-brand-600 py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                beurre
+              </Link> */}
             </div>
           </div>
         )}

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { Filter, SlidersHorizontal } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
 import { getProducts } from '../lib/firebase';
@@ -20,6 +19,8 @@ function Shop() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState(''); // Nouvel état pour la recherche par nom
   const categories = ['all', 'shampoing', 'savon', 'huile', 'beurre'];
 
   useEffect(() => {
@@ -41,9 +42,16 @@ function Shop() {
     }
   };
 
-  const filteredProducts = selectedCategory === 'all'
-    ? products
-    : products.filter(product => product.category === selectedCategory);
+  const filteredProducts = products.filter(product => {
+    const isCategoryMatch = selectedCategory === 'all' || product.category === selectedCategory;
+    const isSearchMatch = product.name.toLowerCase().includes(searchQuery.toLowerCase()); // Filtrage par nom
+    return isCategoryMatch && isSearchMatch;
+  });
+
+  const handleCategoryClick = (category: string) => {
+    setSelectedCategory(category);
+    setIsFilterOpen(false); // Ferme le filtre après la sélection
+  };
 
   if (isLoading) {
     return (
@@ -60,10 +68,17 @@ function Shop() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
         <h1 className="text-2xl sm:text-3xl font-bold">Shop All Products</h1>
-        <button className="flex items-center gap-2 btn btn-secondary">
-          <SlidersHorizontal className="w-4 h-4" />
-          Filter
-        </button>
+        
+        {/* Champ de recherche pour les produits */}
+        <div className="flex items-center gap-2 sm:w-1/2 lg:w-1/3">
+          <input
+            type="text"
+            placeholder="Search products..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="px-4 py-2 border rounded-lg w-full"
+          />
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
@@ -78,7 +93,7 @@ function Shop() {
               {categories.map(category => (
                 <button
                   key={category}
-                  onClick={() => setSelectedCategory(category)}
+                  onClick={() => handleCategoryClick(category)}
                   className={`w-full text-left px-4 py-2 rounded-lg capitalize ${
                     selectedCategory === category
                       ? 'bg-brand-50 text-brand-600'
@@ -96,7 +111,7 @@ function Shop() {
         <div className="lg:col-span-3">
           {filteredProducts.length === 0 ? (
             <div className="text-center py-12">
-              <p className="text-gray-600">No products found in this category.</p>
+              <p className="text-gray-600">No products found.</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
