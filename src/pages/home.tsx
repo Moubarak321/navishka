@@ -7,16 +7,16 @@ function Home() {
       {/* Hero Section */}
       <section className="relative h-[400px] md:h-[600px] rounded-lg md:rounded-2xl overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80"
+          src="https://github.com/Oscarleo11/navishka-Produits/blob/main/Navi2.jpg?raw=true"
           alt="Natural Hair Care"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent">
           <div className="container mx-auto h-full flex items-center">
             <div className="max-w-xl text-white p-4 md:p-8 space-y-4 md:space-y-6">
-              <h1 className="text-3xl md:text-5xl font-bold">Natural Hair Care Solutions</h1>
+              <h1 className="text-3xl md:text-5xl font-bold">Navishka cosmetics</h1>
               <p className="text-base md:text-lg">
-                Discover our organic hair care collection designed to nourish and revitalize your hair naturally.
+              Votre beauté rayonne au naturel.
               </p>
               <Link
                 to="/shop"

@@ -19,7 +19,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center gap-2 text-xl md:text-2xl font-bold text-brand-600">
               <Leaf className="w-6 h-6 md:w-8 md:h-8" />
-              <span>NAVISHKA</span>
+              <span>Navishka</span>
             </Link>
 
             {/* Desktop Navigation */}
