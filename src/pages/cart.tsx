@@ -10,7 +10,7 @@ function Cart() {
     return (
       <div className="text-center py-16">
         <h2 className="text-2xl font-bold mb-4">Your cart is empty</h2>
-        <Link to="/shop" className="btn btn-primary">
+        <Link to="/shop" className="btn bg-green-600 text-white">
           Continue Shopping
         </Link>
       </div>
