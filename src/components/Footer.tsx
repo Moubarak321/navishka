@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Twitter, Leaf } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Leaf, Linkedin } from 'lucide-react';
 
 function Footer() {
   return (
@@ -16,15 +16,21 @@ function Footer() {
               Discover natural hair care solutions with our organic collection.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-brand-600">
+              <a href="https://web.facebook.com/profile.php?id=100064085431329" className="text-gray-400 hover:text-brand-600">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-brand-600">
+              <a href="https://www.instagram.com/justinegbodossou?igsh=MW5ibzM5bWx3bWI1eQ==" className="text-gray-400 hover:text-brand-600">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-brand-600">
+              <a href="https://twitter.com/GbodossouJ23738" className="text-gray-400 hover:text-brand-600">
                 <Twitter className="w-5 h-5" />
               </a>
+              <a href="https://www.linkedin.com/in/justine-gbodossou-232a32131?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className="text-gray-400 hover:text-brand-600">
+                <Linkedin className="w-5 h-5" />
+              </a>
+              {/* <a href="https://www.tiktok.com/@navishkacosmetics?_t=8m0qSyjOUOj&_r=1" className="text-gray-400 hover:text-brand-600">
+                <tiktok className="w-5 h-5" />
+              </a> */}
             </div>
           </div>
 
