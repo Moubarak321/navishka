@@ -20,7 +20,7 @@ function Home() {
               </p>
               <Link
                 to="/shop"
-                className="inline-block bg-white text-black px-6 md:px-8 py-2 md:py-3 rounded-full font-semibold hover:bg-opacity-90 transition"
+                className="inline-block btn bg-green-600 text-white px-6 md:px-8 py-2 md:py-3 rounded-full font-semibold hover:bg-opacity-90 transition"
               >
                 Shop Now
               </Link>
