@@ -19,7 +19,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center gap-2 text-xl md:text-2xl font-bold text-brand-600">
               <img
-                src="../img/logo.jpg" // Assure-toi que le chemin est correct ou utilise un import avec 'require'
+                src="img/logo.jpg" // Assure-toi que le chemin est correct ou utilise un import avec 'require'
                 alt="Logo de l'entreprise"
                 className="w-auto h-16 md:h-20 lg:h-24 object-contain" // Tailwind pour la taille responsive
               />
