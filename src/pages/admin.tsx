@@ -48,7 +48,7 @@ function Admin() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [imagePreview, setImagePreview] = useState<string | null>(null);
-  // const [isUploading, setIsUploading] = useState(false);
+  const [isUploading, setIsUploading] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const [newProduct, setNewProduct] = useState<Omit<Product, 'id' | 'rating' | 'reviews'>>({
