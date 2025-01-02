@@ -190,13 +190,12 @@ Total : ${total.toLocaleString()} Fcfa
   };
 
   const sendWhatsAppMessage = () => {
-    const adminPhoneNumber = '22990838919'; // Remplacez par le numéro de l'administrateur
+    const adminPhoneNumber = '22962003202'; // Remplacez par le numéro de l'administrateur
     const message = encodeURIComponent(generateWhatsAppMessage());
     window.open(`https://wa.me/${adminPhoneNumber}?text=${message}`, '_blank');
     clearCart();
     navigate('/success');
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     sendWhatsAppMessage();

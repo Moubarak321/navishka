@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Twitter, Leaf, Linkedin } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Leaf, Linkedin, MessageCircle } from 'lucide-react'; // Ajout de MessageCircle pour l'icône WhatsApp
 
 function Footer() {
   return (
@@ -9,8 +9,12 @@ function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <div className="flex items-center gap-2 text-xl md:text-2xl font-bold text-brand-600">
-              <Leaf className="w-6 h-6 md:w-8 md:h-8" />
-              <span>NAVISHKA</span>
+              {/* Logo de l'entreprise */}
+              <img
+                src="../img/logo.jpg" // Assure-toi que le chemin est correct ou utilise un import avec 'require'
+                alt="Logo de l'entreprise"
+                className="w-auto h-16 md:h-40 lg:h-40 object-contain"
+              />
             </div>
             <p className="text-sm md:text-base text-gray-600">
               Discover natural hair care solutions with our organic collection.
@@ -28,12 +32,16 @@ function Footer() {
               <a href="https://www.linkedin.com/in/justine-gbodossou-232a32131?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className="text-gray-400 hover:text-brand-600">
                 <Linkedin className="w-5 h-5" />
               </a>
-              {/* <a href="https://www.tiktok.com/@navishkacosmetics?_t=8m0qSyjOUOj&_r=1" className="text-gray-400 hover:text-brand-600">
-                <tiktok className="w-5 h-5" />
-              </a> */}
+              <a
+                href="https://wa.me/22962003202"
+                className="text-gray-400 hover:text-brand-600"
+              >
+                <MessageCircle className="w-5 h-5" />
+              </a>
             </div>
           </div>
 
+          {/* Reste du contenu du footer */}
           <div>
             <h4 className="font-semibold mb-4">Shop</h4>
             <ul className="space-y-2 text-sm md:text-base">

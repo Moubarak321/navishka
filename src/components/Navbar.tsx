@@ -14,12 +14,17 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="bg-white shadow-sm sticky top-0 z-50">
+      <nav className="bg-white shadow-sm sticky top-0 z-50 h-16 md:h-20 lg:h-24">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center gap-2 text-xl md:text-2xl font-bold text-brand-600">
-              <Leaf className="w-6 h-6 md:w-8 md:h-8" />
-              <span>Navishka</span>
+              <img
+                src="../img/logo.jpg" // Assure-toi que le chemin est correct ou utilise un import avec 'require'
+                alt="Logo de l'entreprise"
+                className="w-auto h-16 md:h-20 lg:h-24 object-contain" // Tailwind pour la taille responsive
+              />
+              {/* <Leaf className="w-6 h-6 md:w-8 md:h-8" />
+              <span>Navishka</span> */}
             </Link>
 
             {/* Desktop Navigation */}
@@ -27,6 +32,9 @@ export default function Navbar() {
               <Link to="/shop" className="text-gray-70000 hover:text-brand-600 font-bold">
                 Shop
               </Link>
+              {/* <Link to="/blog" className="text-gray-70000 hover:text-brand-600 font-bold">
+                Blog
+              </Link> */}
             </div>
 
 

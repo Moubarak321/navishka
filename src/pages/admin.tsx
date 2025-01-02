@@ -38,7 +38,7 @@ interface Product {
 
 function Admin() {
   const navigate = useNavigate();
-  const { user, isAdmin, signOut} = useAuthStore();
+  const { user, isAdmin, signOut } = useAuthStore();
   const [products, setProducts] = useState<Product[]>([]);
   const categories = ['shampoing', 'savon', 'huile', 'beurre'];
 
@@ -48,13 +48,13 @@ function Admin() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [imagePreview, setImagePreview] = useState<string | null>(null);
-  // const [isUploading, setIsUploading] = useState(false);
+  const [isUploading, setIsUploading] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const [newProduct, setNewProduct] = useState<Omit<Product, 'id' | 'rating' | 'reviews'>>({
     name: '',
     price: 0,
-    category: 'shampoo',
+    category: 'shampoing',
     description: '',
     image: '',
   });
