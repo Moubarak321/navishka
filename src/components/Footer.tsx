@@ -11,7 +11,7 @@ function Footer() {
             <div className="flex items-center gap-2 text-xl md:text-2xl font-bold text-brand-600">
               {/* Logo de l'entreprise */}
               <img
-                src="img/logo.jpg" // Assure-toi que le chemin est correct ou utilise un import avec 'require'
+                src="https://github.com/Oscarleo11/navishka-Produits/blob/main/logo.jpg?raw=true" // Assure-toi que le chemin est correct ou utilise un import avec 'require'
                 alt="Logo de l'entreprise"
                 className="w-auto h-16 md:h-40 lg:h-40 object-contain"
               />
