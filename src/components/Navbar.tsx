@@ -19,13 +19,14 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center gap-2 text-xl md:text-2xl font-bold text-brand-600">
               <img
-                src="../img/logo.jpg" // Assure-toi que le chemin est correct ou utilise un import avec 'require'
+                src="https://github.com/Oscarleo11/navishka-Produits/blob/main/logo.jpg?raw=true" // Utilisation du lien direct
                 alt="Logo de l'entreprise"
                 className="w-auto h-16 md:h-20 lg:h-24 object-contain" // Tailwind pour la taille responsive
               />
               {/* <Leaf className="w-6 h-6 md:w-8 md:h-8" />
-              <span>Navishka</span> */}
+  <span>Navishka</span> */}
             </Link>
+
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
