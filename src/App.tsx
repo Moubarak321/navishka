@@ -10,7 +10,9 @@ import Cart from './pages/cart';
 import Checkout from './pages/checkout';
 import Profile from './pages/profile';
 import Admin from './pages/admin';
-console.log(Home, Shop, ProductDetail, Cart, Checkout, Profile, Admin);
+import AboutPage from './pages/about';
+
+console.log(Home, Shop, ProductDetail, Cart, Checkout, Profile, Admin, AboutPage);
 
 function App() {
   return (
@@ -26,6 +28,7 @@ function App() {
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/about" element={<AboutPage />} />
           </Routes>
         </main>
         <Footer />
