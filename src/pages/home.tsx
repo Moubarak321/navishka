@@ -7,7 +7,7 @@ function Home() {
       {/* Hero Section */}
       <section className="relative h-[400px] md:h-[600px] rounded-lg md:rounded-2xl overflow-hidden">
         <img
-          src="https://github.com/Oscarleo11/navishka-Produits/blob/main/Navi2.jpg?raw=true"
+          src="https://github.com/Oscarleo11/navishka-Produits/blob/main/navis.jpg?raw=true"
           alt="Natural Hair Care"
           className="absolute inset-0 w-full h-full object-cover"
         />
