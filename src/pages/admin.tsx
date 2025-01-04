@@ -201,36 +201,36 @@ function Admin() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="flex justify-between items-center mb-8">
-        <h1 className="text-2xl sm:text-3xl font-bold">Admin Dashboard</h1>
+      <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+        <h1 className="text-2xl sm:text-3xl font-bold text-center sm:text-left">Admin Dashboard</h1>
         <button
           onClick={() => setIsAddModalOpen(true)}
-          className="btn bg-green-600 text-white flex items-center gap-2"
+          className="btn bg-green-600 text-white flex items-center gap-2 px-4 py-2"
           disabled={isLoading}
         >
           <Plus className="w-4 h-4" />
-          Add Product
+          <span>Add Product</span>
         </button>
         <button
           onClick={() => signOut()}
-          className="btn bg-green-600 text-white flex items-center gap-2"
+          className="btn bg-red-600 text-white flex items-center gap-2 px-4 py-2"
         >
-          Sign Out
+          <span>Sign Out</span>
         </button>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {[
           { label: 'Total Orders', value: '156', icon: Package },
           { label: 'Total Customers', value: '2,451', icon: Users },
           { label: 'Total Products', value: products.length.toString(), icon: ShoppingBag },
           { label: 'Total Revenue', value: '$12,454', icon: BarChart3 },
         ].map(({ label, value, icon: Icon }) => (
-          <div key={label} className="bg-white rounded-lg shadow-sm p-4 sm:p-6">
-            <div className="flex items-center justify-between">
+          <div key={label} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+            <div className="flex justify-between items-center">
               <div>
                 <p className="text-sm text-gray-600">{label}</p>
-                <p className="text-xl sm:text-2xl font-semibold">{value}</p>
+                <p className="text-2xl font-semibold">{value}</p>
               </div>
               <Icon className="w-8 h-8 text-brand-500" />
             </div>
@@ -240,7 +240,7 @@ function Admin() {
 
       <div className="bg-white rounded-lg shadow-sm">
         <div className="border-b px-4 sm:px-6">
-          <div className="flex space-x-4 sm:space-x-8">
+          <div className="flex space-x-4 sm:space-x-8 overflow-x-auto">
             {[
               { id: 'products', label: 'Products', icon: ShoppingBag },
               { id: 'categories', label: 'Categories', icon: Grid },
@@ -248,7 +248,7 @@ function Admin() {
               <button
                 key={id}
                 onClick={() => setActiveTab(id)}
-                className={`flex items-center gap-2 py-4 border-b-2 px-2 ${activeTab === id
+                className={`flex items-center gap-2 py-4 px-2 border-b-2 whitespace-nowrap ${activeTab === id
                   ? 'border-brand-500 text-brand-500'
                   : 'border-transparent text-gray-500 hover:text-gray-700'
                   }`}
@@ -300,7 +300,7 @@ function Admin() {
                         />
                       </td>
                       <td className="max-w-[200px] truncate">{product.name}</td>
-                      <td className="capitalize hidden sm:table-cell">{product.category}</td>
+                      <td className="py-3 px-4 hidden sm:table-cell capitalize">{product.category}</td>
                       <td>{product.price} fcfa</td>
                       <td>
                         <div className="flex gap-2">
@@ -333,7 +333,7 @@ function Admin() {
               {categories.map((category) => (
                 <div
                   key={category}
-                  className="bg-gray-50 rounded-lg p-6 flex items-center justify-between"
+                  className="bg-gray-50 rounded-lg p-6 flex items-center justify-between hover:shadow-md"
                 >
                   <div>
                     <h3 className="font-semibold capitalize">{category}</h3>
