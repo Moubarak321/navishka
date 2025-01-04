@@ -76,6 +76,13 @@ export default function Navbar() {
               >
                 Shop
               </Link>
+              <Link
+                to="/about"
+                className="block text-gray-700 hover:text-brand-600 py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                About Us
+              </Link>
               {/* <Link
                 to="/shop?category=shampoo"
                 className="block text-gray-700 hover:text-brand-600 py-2"
