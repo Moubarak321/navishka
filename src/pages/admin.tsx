@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useAuthStore } from '../store/useAuthStore';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 import {
   Package,
   Users,
@@ -92,6 +94,13 @@ function Admin() {
         >
           Go to Login
         </button>
+        <Link
+          to="/shop"
+          className="btn bg-green-600 text-white flex items-center gap-2 px-4 py-2"
+        >
+          Go to Shop
+        </Link>
+        
       </div>
     );
   }
@@ -211,11 +220,17 @@ function Admin() {
           <Plus className="w-4 h-4" />
           <span>Add Product</span>
         </button>
+        <Link
+          to="/shop"
+          className="btn bg-green-600 text-white flex items-center gap-2 px-4 py-2"
+        >
+          Voir la boutique
+        </Link>
         <button
           onClick={() => signOut()}
           className="btn bg-red-600 text-white flex items-center gap-2 px-4 py-2"
         >
-          <span>Sign Out</span>
+          <span>Déconnexion</span>
         </button>
       </div>
 
