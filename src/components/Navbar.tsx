@@ -34,7 +34,10 @@ export default function Navbar() {
                 Shop
               </Link>
               <Link to="/about" className="text-gray-70000 hover:text-brand-600 font-bold">
-                About Us
+              À propos de nous
+              </Link>
+              <Link to="/testimonials" className="text-gray-70000 hover:text-brand-600 font-bold">
+                Témoignages
               </Link>
               {/* <Link to="/blog" className="text-gray-70000 hover:text-brand-600 font-bold">
                 Blog
@@ -81,8 +84,13 @@ export default function Navbar() {
                 className="block text-gray-700 hover:text-brand-600 py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                About Us
+                À propos de nous
               </Link>
+              <Link to="/testimonials"
+                className="block text-gray-700 hover:text-brand-600 py-2">
+                Témoignages
+              </Link>
+
               {/* <Link
                 to="/shop?category=shampoo"
                 className="block text-gray-700 hover:text-brand-600 py-2"

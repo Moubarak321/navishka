@@ -126,7 +126,7 @@ const TestimonialForm = () => {
       {/* Liste des témoignages */}
       <div className="mt-10 space-y-6 max-w-3xl mx-auto">
         {testimonials.length === 0 ? (
-          <p className="text-center text-gray-500">Aucun témoignage pour l'instant.</p>
+          <p className="text-center text-gray-500">Chargement...</p>
         ) : (
           testimonials.map((testimonial, index) => (
             <div

@@ -11,8 +11,10 @@ import Checkout from './pages/checkout';
 import Profile from './pages/profile';
 import Admin from './pages/admin';
 import AboutPage from './pages/about';
+import Testimonials from "./pages/testimonials";
 
-console.log(Home, Shop, ProductDetail, Cart, Checkout, Profile, Admin, AboutPage);
+
+console.log(Home, Shop, ProductDetail, Cart, Checkout, Profile, Admin, AboutPage, Testimonials);
 
 function App() {
   return (
@@ -29,6 +31,7 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/testimonials" element={<Testimonials />} />
           </Routes>
         </main>
         <Footer />
