@@ -16,7 +16,6 @@ function BlogPost() {
   const { id } = useParams<{ id: string }>(); // Récupère l'ID de l'article depuis l'URL
   const [blog, setBlog] = useState<BlogPost | null>(null);
   const [loading, setLoading] = useState(true);
-  const authors = ['Navishka Cosmétics', 'Autre Auteur 1', 'Autre Auteur 2'];
 
 
   useEffect(() => {

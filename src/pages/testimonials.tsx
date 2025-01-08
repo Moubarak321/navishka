@@ -1,12 +1,19 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { getDatabase, ref, push, onValue } from "firebase/database";
+
+interface Testimonial {
+  name: string;
+  email: string;
+  content: string;
+  timestamp: string;
+}
 
 const TestimonialForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [content, setContent] = useState("");
   const [error, setError] = useState("");
-  const [testimonials, setTestimonials] = useState([]);
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Charger les témoignages depuis Firebase
@@ -17,7 +24,7 @@ const TestimonialForm = () => {
     const unsubscribe = onValue(testimonialsRef, (snapshot) => {
       const data = snapshot.val();
       if (data) {
-        const loadedTestimonials = Object.values(data); // Transformer l'objet en tableau
+        const loadedTestimonials = Object.values(data) as Testimonial[]; // Transformer l'objet en tableau
         setTestimonials(loadedTestimonials);
       } else {
         setTestimonials([]); // Si pas de témoignages
@@ -28,7 +35,7 @@ const TestimonialForm = () => {
   }, []);
 
   // Soumettre un témoignage
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !email || !content) {
       setError("Tous les champs sont obligatoires.");
@@ -146,7 +153,7 @@ const TestimonialForm = () => {
 };
 
 // Validation de l'email
-const validateEmail = (email) => {
+const validateEmail = (email: string) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 };

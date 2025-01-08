@@ -40,7 +40,7 @@ function Blog() {
         <div>
             <h1 className="text-3xl font-bold">Our Blog</h1>
             {blogs.length === 0 ? (
-                <p className="text-gray-600 mt-4">No blog posts available.</p>
+                <p className="text-gray-600 mt-4">Chargement.</p>
             ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
                     {blogs.map((blog) => (

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Filter, SlidersHorizontal } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Filter } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
 import { getProducts } from '../lib/firebase';
 import toast from 'react-hot-toast';
@@ -19,8 +19,7 @@ function Shop() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [isFilterOpen, setIsFilterOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState(''); // Nouvel état pour la recherche par nom
+  const [searchQuery, setSearchQuery] = useState('');
   const categories = ['all', 'shampoing', 'savon', 'huile', 'beurre'];
 
   useEffect(() => {
@@ -32,7 +31,17 @@ function Shop() {
       setIsLoading(true);
       const fetchedProducts = await getProducts();
       if (fetchedProducts) {
-        setProducts(fetchedProducts);
+        const products: Product[] = fetchedProducts.map((product: any) => ({
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          image: product.image,
+          category: product.category,
+          description: product.description,
+          rating: product.rating,
+          reviews: product.reviews,
+        }));
+        setProducts(products);
       }
     } catch (error) {
       console.error('Error fetching products:', error);
@@ -44,13 +53,12 @@ function Shop() {
 
   const filteredProducts = products.filter(product => {
     const isCategoryMatch = selectedCategory === 'all' || product.category === selectedCategory;
-    const isSearchMatch = product.name.toLowerCase().includes(searchQuery.toLowerCase()); // Filtrage par nom
+    const isSearchMatch = product.name.toLowerCase().includes(searchQuery.toLowerCase());
     return isCategoryMatch && isSearchMatch;
   });
 
   const handleCategoryClick = (category: string) => {
     setSelectedCategory(category);
-    setIsFilterOpen(false); // Ferme le filtre après la sélection
   };
 
   if (isLoading) {
@@ -69,7 +77,6 @@ function Shop() {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
         <h1 className="text-2xl sm:text-3xl font-bold">Shop All Products</h1>
         
-        {/* Champ de recherche pour les produits */}
         <div className="flex items-center gap-2 sm:w-1/2 lg:w-1/3">
           <input
             type="text"
@@ -82,7 +89,6 @@ function Shop() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-        {/* Categories Sidebar */}
         <div className="lg:col-span-1">
           <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm">
             <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
@@ -107,7 +113,6 @@ function Shop() {
           </div>
         </div>
 
-        {/* Products Grid */}
         <div className="lg:col-span-3">
           {filteredProducts.length === 0 ? (
             <div className="text-center py-12">

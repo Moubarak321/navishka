@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Star, Minus, Plus, Heart, ArrowLeft } from 'lucide-react';
 import { useCartStore } from '../store/useCartStore';
-import { getProductById } from '../lib/firebase';
+import { getProductById } from '../lib/firebase'; // Importez la fonction getProductById
+
 import toast from 'react-hot-toast';
 
 interface Product {
@@ -33,7 +34,7 @@ function ProductDetail() {
     
     try {
       setIsLoading(true);
-      const productData = await getProductById(id);
+      const productData = await getProductById(id); // Utilisez la fonction getProductById
       if (productData) {
         setProduct(productData as Product);
       } else {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ShoppingBag, User, Search, Menu, Leaf, X } from 'lucide-react';
+import { ShoppingBag, Menu, X } from 'lucide-react';
 import { useCartStore } from '../store/useCartStore';
 import { useAuthStore } from '../store/useAuthStore';
 import AuthModal from './AuthModal';
@@ -39,9 +39,9 @@ export default function Navbar() {
               <Link to="/testimonials" className="text-gray-70000 hover:text-brand-600 font-bold">
                 Témoignages
               </Link>
-              {/* <Link to="/blog" className="text-gray-70000 hover:text-brand-600 font-bold">
+              <Link to="/blog" className="text-gray-70000 hover:text-brand-600 font-bold">
                 Blog
-              </Link> */}
+              </Link>
             </div>
 
 
@@ -89,6 +89,10 @@ export default function Navbar() {
               <Link to="/testimonials"
                 className="block text-gray-700 hover:text-brand-600 py-2">
                 Témoignages
+              </Link>
+              <Link to="/blog"
+                className="block text-gray-700 hover:text-brand-600 py-2">
+                Blog
               </Link>
 
               {/* <Link

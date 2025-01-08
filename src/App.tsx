@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import Navbar from './components/Navbar';
@@ -12,9 +11,11 @@ import Profile from './pages/profile';
 import Admin from './pages/admin';
 import AboutPage from './pages/about';
 import Testimonials from "./pages/testimonials";
+import Blog from "./pages/Blog";
+import BlogPost from './pages/BlogPost';
 
 
-console.log(Home, Shop, ProductDetail, Cart, Checkout, Profile, Admin, AboutPage, Testimonials);
+console.log(Home, Shop, ProductDetail, Cart, Checkout, Profile, Admin, AboutPage, Testimonials, Blog, BlogPost);
 
 function App() {
   return (
@@ -32,6 +33,8 @@ function App() {
             <Route path="/admin" element={<Admin />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/testimonials" element={<Testimonials />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<BlogPost />} />
           </Routes>
         </main>
         <Footer />
