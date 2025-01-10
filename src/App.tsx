@@ -11,8 +11,8 @@ import Profile from './pages/profile';
 import Admin from './pages/admin';
 import AboutPage from './pages/about';
 import Testimonials from "./pages/testimonials";
-import Blog from "./pages/Blog";
-import BlogPost from './pages/BlogPost';
+import Blog from "./pages/blog";
+import BlogPost from './pages/blogPost';
 
 
 console.log(Home, Shop, ProductDetail, Cart, Checkout, Profile, Admin, AboutPage, Testimonials, Blog, BlogPost);
