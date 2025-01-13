@@ -29,6 +29,7 @@ const AboutPage = () => {
           <div className="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition-shadow">
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9v9FBKbq0U15hJzE8ZngHAQFYgj1KXxU61w&s"
+
               alt="Values"
               className="rounded-lg mb-6"
             />
@@ -42,6 +43,7 @@ const AboutPage = () => {
           <div className="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition-shadow">
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp2yxzmW2rwQb8SceUJHcGs8DChm-FkwvrzQ&s"
+
               alt="Story"
               className="rounded-lg mb-6"
             />
@@ -56,7 +58,7 @@ const AboutPage = () => {
         <div className="mt-16">
           <div className="flex justify-center">
             <img
-              src="https://via.placeholder.com/800x400"
+              src="https://github.com/Oscarleo11/navishka-Produits/blob/main/Navi2.jpg?raw=true"
               alt="Navishka Products"
               className="rounded-lg shadow-md"
             />

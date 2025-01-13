@@ -3,7 +3,6 @@ import { Dialog } from '@headlessui/react';
 import { X } from 'lucide-react';
 import { useAuthStore } from '../store/useAuthStore';
 import { useNavigate } from 'react-router-dom';
-import toast from 'react-hot-toast';
 
 interface AuthModalProps {
   isOpen: boolean;

@@ -153,7 +153,7 @@
 
 
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCartStore } from '../store/useCartStore';
 
@@ -196,10 +196,6 @@ Total : ${total.toLocaleString()} Fcfa
     clearCart();
     navigate('/success');
   };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    sendWhatsAppMessage();
-  };
 
   return (
     <div className="max-w-4xl mx-auto">
@@ -208,7 +204,10 @@ Total : ${total.toLocaleString()} Fcfa
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Checkout Form */}
         <div className="space-y-6">
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={(e) => {
+            e.preventDefault();
+            sendWhatsAppMessage();
+          }} className="space-y-4">
             {/* <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                 Email

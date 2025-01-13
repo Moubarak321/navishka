@@ -62,7 +62,7 @@ function Admin() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [imagePreview, setImagePreview] = useState<string | null>(null);
-  const [isUploading, setIsUploading] = useState(false);
+  const [isUploading] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const authors = ['Navishka Cosmétics', 'Autre Auteur 1', 'Autre Auteur 2'];
 

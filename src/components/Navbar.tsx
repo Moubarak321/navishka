@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ShoppingBag, Menu, X } from 'lucide-react';
 import { useCartStore } from '../store/useCartStore';
@@ -19,34 +19,29 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16">
             <Link to="/" className="flex items-center gap-2 text-xl md:text-2xl font-bold text-brand-600">
               <img
-                src="https://github.com/Oscarleo11/navishka-Produits/blob/main/logo.jpg?raw=true" // Utilisation du lien direct
+                src="https://github.com/Oscarleo11/navishka-Produits/blob/main/logo.jpg?raw=true"
                 alt="Logo de l'entreprise"
-                className="w-auto h-16 md:h-20 lg:h-24 object-contain" // Tailwind pour la taille responsive
+                className="w-auto h-16 md:h-20 lg:h-24 object-contain"
               />
-              {/* <Leaf className="w-6 h-6 md:w-8 md:h-8" />
-  <span>Navishka</span> */}
             </Link>
-
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <Link to="/shop" className="text-gray-70000 hover:text-brand-600 font-bold">
+              <Link to="/shop" className="text-gray-700 hover:text-brand-600 font-bold">
                 Shop
               </Link>
-              <Link to="/about" className="text-gray-70000 hover:text-brand-600 font-bold">
-              À propos de nous
+              <Link to="/about" className="text-gray-700 hover:text-brand-600 font-bold">
+                À propos de nous
               </Link>
-              <Link to="/testimonials" className="text-gray-70000 hover:text-brand-600 font-bold">
+              <Link to="/testimonials" className="text-gray-700 hover:text-brand-600 font-bold">
                 Témoignages
               </Link>
-              <Link to="/blog" className="text-gray-70000 hover:text-brand-600 font-bold">
+              <Link to="/blog" className="text-gray-700 hover:text-brand-600 font-bold">
                 Blog
               </Link>
             </div>
 
-
             <div className="flex items-center space-x-4 md:space-x-6">
-
               <Link to="/cart" className="text-gray-700 hover:text-brand-600 relative">
                 <ShoppingBag className="w-5 h-5" />
                 {itemCount > 0 && (
@@ -68,9 +63,20 @@ export default function Navbar() {
             </div>
           </div>
         </div>
+
         {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden bg-white border-t">
+        <div
+          className={`md:hidden fixed inset-0 bg-black bg-opacity-50 transition-opacity ${
+            isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+          }`}
+          onClick={() => setIsMobileMenuOpen(false)}
+        >
+          <div
+            className={`bg-white w-3/4 max-w-xs h-full shadow-lg transform transition-transform ${
+              isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+            }`}
+            onClick={(e) => e.stopPropagation()} // Empêche la fermeture du menu lors du clic à l'intérieur
+          >
             <div className="container mx-auto px-4 py-4 space-y-3">
               <Link
                 to="/shop"
@@ -86,46 +92,23 @@ export default function Navbar() {
               >
                 À propos de nous
               </Link>
-              <Link to="/testimonials"
-                className="block text-gray-700 hover:text-brand-600 py-2">
+              <Link
+                to="/testimonials"
+                className="block text-gray-700 hover:text-brand-600 py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
                 Témoignages
               </Link>
-              <Link to="/blog"
-                className="block text-gray-700 hover:text-brand-600 py-2">
+              <Link
+                to="/blog"
+                className="block text-gray-700 hover:text-brand-600 py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
                 Blog
               </Link>
-
-              {/* <Link
-                to="/shop?category=shampoo"
-                className="block text-gray-700 hover:text-brand-600 py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                shampoing
-              </Link>
-              <Link
-                to="/shop?category=treatments"
-                className="block text-gray-700 hover:text-brand-600 py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                savon
-              </Link>
-              <Link
-                to="/shop?category=accessories"
-                className="block text-gray-700 hover:text-brand-600 py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                huile
-              </Link>
-              <Link
-                to="/shop?category=accessories"
-                className="block text-gray-700 hover:text-brand-600 py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                beurre
-              </Link> */}
             </div>
           </div>
-        )}
+        </div>
       </nav>
 
       <AuthModal
