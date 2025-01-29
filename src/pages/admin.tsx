@@ -54,7 +54,7 @@ function Admin() {
   const { user, isAdmin, signOut } = useAuthStore();
   const [products, setProducts] = useState<Product[]>([]);
   const [blogs, setBlogs] = useState<Blog[]>([]);
-  const categories = ['shampoing', 'savon', 'huile', 'beurre'];
+  const categories = ['shampoing','crême', 'savon', 'huile', 'beurre',];
 
   const [activeTab, setActiveTab] = useState('products');
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);

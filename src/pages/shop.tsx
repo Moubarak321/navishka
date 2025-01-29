@@ -21,7 +21,7 @@ function Shop() {
   const [isLoading, setIsLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [isCategoriesOpen, setIsCategoriesOpen] = useState(true); // État pour gérer l'ouverture/fermeture des catégories
-  const categories = ['all', 'shampoing', 'savon', 'huile', 'beurre'];
+  const categories = ['all', 'shampoing','crême', 'savon', 'huile', 'beurre'];
 
   useEffect(() => {
     fetchProducts();

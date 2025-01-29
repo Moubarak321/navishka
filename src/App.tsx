@@ -13,9 +13,10 @@ import AboutPage from './pages/about';
 import Testimonials from "./pages/testimonials";
 import Blog from "./pages/blog";
 import BlogPost from './pages/blogPost';
+import Contact from './pages/contact';
 
 
-console.log(Home, Shop, ProductDetail, Cart, Checkout, Profile, Admin, AboutPage, Testimonials, Blog, BlogPost);
+console.log(Home, Shop, ProductDetail, Cart, Checkout, Profile, Admin, AboutPage, Testimonials, Blog, BlogPost, Contact);
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<BlogPost />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
         <Footer />

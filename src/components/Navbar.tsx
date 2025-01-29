@@ -39,6 +39,9 @@ export default function Navbar() {
               <Link to="/blog" className="text-gray-700 hover:text-brand-600 font-bold">
                 Blog
               </Link>
+              <Link to="/contact" className="text-gray-700 hover:text-brand-600 font-bold">
+                Contact
+              </Link>
             </div>
 
             <div className="flex items-center space-x-4 md:space-x-6">
@@ -66,15 +69,13 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         <div
-          className={`md:hidden fixed inset-0 bg-black bg-opacity-50 transition-opacity ${
-            isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-          }`}
+          className={`md:hidden fixed inset-0 bg-black bg-opacity-50 transition-opacity ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+            }`}
           onClick={() => setIsMobileMenuOpen(false)}
         >
           <div
-            className={`bg-white w-3/4 max-w-xs h-full shadow-lg transform transition-transform ${
-              isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
-            }`}
+            className={`bg-white w-3/4 max-w-xs h-full shadow-lg transform transition-transform ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+              }`}
             onClick={(e) => e.stopPropagation()} // Empêche la fermeture du menu lors du clic à l'intérieur
           >
             <div className="container mx-auto px-4 py-4 space-y-3">
@@ -105,6 +106,13 @@ export default function Navbar() {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Blog
+              </Link>
+              <Link
+                to="/contact"
+                className="block text-gray-700 hover:text-brand-600 py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contact
               </Link>
             </div>
           </div>

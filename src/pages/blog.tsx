@@ -38,7 +38,7 @@ function Blog() {
 
     return (
         <div>
-            <h1 className="text-3xl font-bold">Our Blog</h1>
+            <h1 className="text-3xl font-bold">Nos article Blog</h1>
             {blogs.length === 0 ? (
                 <p className="text-gray-600 mt-4">Chargement.</p>
             ) : (
