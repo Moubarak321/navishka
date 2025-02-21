@@ -26,7 +26,7 @@ function Contact() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Titre de la page */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900">Nous Contacter</h1>
+          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900">Nous Contactez</h1>
           <p className="mt-4 text-lg text-gray-600">
             Nous sommes là pour répondre à vos questions. N'hésitez pas à nous contacter !
           </p>
